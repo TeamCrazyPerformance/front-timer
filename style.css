@@ -38,6 +38,18 @@
     border: none;
 }
 
+#reset {
+    background-color: grey;
+    color: white;
+    position: absolute;
+    width: 142px;
+    height: 45px;
+    font-size: 16px;
+    left: 400px;
+    top: 400px;
+    border: none;
+}
+
 #text {
     position: absolute;
     width: 100px;
