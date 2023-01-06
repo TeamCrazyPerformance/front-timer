@@ -3,7 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <title>타이머</title>
+    <script language="JavaScript">
+      const Timer=document.getElementById('Timer');
+      let time=300000;
+      var flag= false;
+      Timer.value=time/(1000*60)+":"+(time/1000)%60;
+      function msg_time(){
+        
+      }
+      window.onload = function TimerStart(){ tid=setInterval('msg_time()',1000) };
+    </script>
+
+    <style>
+
+    .button1{
+      background-color:#4FCC54;
+      color: #FFFFFF;
+      border: none;
+      font-size: 16px;
+      position: absolute;
+      width: 142px;
+      height: 45px;
+      left: 118px;
+      top: 303px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .button2{
+      background-color:#FF7373;
+      color: #FFFFFF;
+      border: none;
+      font-size: 16px;
+      position: absolute;
+      width: 142px;
+      height: 45px;
+      left: 118px;
+      top: 357px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .min1Button{
+      position: absolute;
+      background-color:#71C2FC ;
+      color:#FFFFFF;
+      height: 40px;
+      width: 40px;
+      top: 452px;
+      left: 118px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .min3Button{
+      position: absolute;
+      background-color:#71C2FC ;
+      color:#FFFFFF;
+      height: 40px;
+      width: 40px;
+      top: 452px;
+      left: 169px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .min5Button{
+      position: absolute;
+      background-color:#71C2FC ;
+      color:#FFFFFF;
+      height: 40px;
+      width: 40px;
+      top: 452px;
+      left: 220px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+      
+    </style>
   </head>
 
-  <body></body>
+  <body>
+    <input id="Timer" type="text" value="" readonly/>
+    <input type="button" class="button1" value="시작">
+    <input type="button" class="button2" value="정지">
+    <div style=
+    "width: 80px;
+    height: 17px;
+    left: 150px;
+    top: 424px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    position:absolute">
+    시간 추가
+    </div>
+    <input type="button" class="min1Button" value="1분">
+    <input type="button" class="min3Button" value="3분">
+    <input type="button" class="min5Button" value="5분">
+  </body>
 </html>
