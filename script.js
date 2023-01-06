@@ -22,22 +22,9 @@ function start() {
             minute -= 1;
             second = 59;
         }
-
-        if (second == 60) {
-            second = 0;
-        }
         
-        if (second < 10) {
-            secText.innerText = "0" + second;
-        } else {
-            secText.innerText = second;
-        }
-
-        if (minute < 1) {
-            minText.innerText = "0" + minute;
-        } else {
-            minText.innerText = minute;
-        }
+        updateSecText();
+        updateMinText();
 
         if (second == 0 && minute == 0) {
             clearInterval(timer);
@@ -50,6 +37,22 @@ function start() {
 stopBtn.addEventListener("click", function () {
     stop();
 });
+
+function updateMinText() {
+    if (minute < 1) {
+        minText.innerText = "0" + minute;
+    } else {
+        minText.innerText = minute;
+    }
+}
+
+function updateSecText() {
+    if (second < 10) {
+        secText.innerText = "0" + second;
+    } else {
+        secText.innerText = second;
+    }
+}
 
 function stop() {
     clearInterval(timer);
@@ -73,11 +76,7 @@ function addTime(addingMinute) {
         minute -= 60;
     }
 
-    if (minute < 10) {
-        minText.innerText = "0" + minute;
-    } else {
-        minText.innerText = minute;
-    }
+    updateMinText();
 }
 
 resetBtn.addEventListener("click", function () {
