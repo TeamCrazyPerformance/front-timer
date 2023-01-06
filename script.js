@@ -1,3 +1,10 @@
+const ONE = 1;
+const THREE = 3;
+const FIVE = 5;
+const SECOND_LOWER_BOUNDARY = 0;
+const MINUTE_LOWER_BOUNDARY = 0;
+const MINUTE_UPPER_BOUNDARY = 60;
+
 const secText = document.getElementById("sec");
 const minText = document.getElementById("min");
 const startBtn = document.getElementById("startBtn");
@@ -11,6 +18,7 @@ var minute = 0;
 var second = 0;
 let timer;
 var timeOutFlag = false;
+var isTimeAdded = false;
 
 startBtn.addEventListener("click", function () {
     start();
@@ -18,6 +26,12 @@ startBtn.addEventListener("click", function () {
 
 function start() {
     timer = setInterval(function () {
+        if (!isTimeAdded) {
+            reset();
+            window.alert("추가된 시간이 없습니다!");
+            return;
+        }
+
         if (timeOutFlag) {
             timeOut();
             return;
@@ -40,7 +54,7 @@ stopBtn.addEventListener("click", function () {
 
 function secondPast() {
     second--;
-    if (second < 0) {
+    if (second < SECOND_LOWER_BOUNDARY) {
         minute -= 1;
         second = 59;
     }
@@ -52,7 +66,7 @@ function timeOut() {
 }
 
 function isTimeOut() {
-    return second == 0 && minute == 0;
+    return second == SECOND_LOWER_BOUNDARY && minute == MINUTE_LOWER_BOUNDARY;
 }
 
 function updateMinText() {
@@ -76,21 +90,23 @@ function stop() {
 }
 
 minute1.addEventListener("click", function () {
-    addTime(1);
+    addTime(ONE);
 });
 
 minute3.addEventListener("click", function () {
-    addTime(3);
+    addTime(THREE);
 });
 
 minute5.addEventListener("click", function () {
-    addTime(5);
+    addTime(FIVE);
 });
 
 function addTime(addingMinute) {
+    isTimeAdded = true;
+    
     minute += addingMinute;
-    if (minute >= 60) {
-        minute -= 60;
+    if (minute >= MINUTE_UPPER_BOUNDARY) {
+        minute -= MINUTE_UPPER_BOUNDARY;
     }
 
     updateMinText();
