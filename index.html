@@ -2,8 +2,26 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="timer.css">
     <title>타이머</title>
   </head>
-
-  <body></body>
+  <body>
+    <div class="box">
+      <div class="time">
+          <h1 class="time">00:00</h1>
+      </div>
+      <div class="button">
+          <button id="reset">초기화</button>
+          <button id="start">시작</button>
+          <button id="end">정지</button>
+      </div>
+      <p id="literal">시간추가</p>
+      <div class="setting">
+        <button class="btn one">1분</button>
+        <button class="btn three">3분</button>
+        <button class="btn five">5분</button>
+      </div>
+    </div>
+    <script src="timer.js"></script>  
+  </body>
 </html>
