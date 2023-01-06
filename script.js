@@ -10,6 +10,7 @@ const resetBtn = document.getElementById("resetBtn");
 var minute = 0;
 var second = 0;
 let timer;
+var timeOutFlag = false;
 
 startBtn.addEventListener("click", function () {
     start();
@@ -17,6 +18,11 @@ startBtn.addEventListener("click", function () {
 
 function start() {
     timer = setInterval(function () {
+        if (timeOutFlag) {
+            timeOut();
+            return;
+        }
+
         second--;
         if (second < 0) {
             minute -= 1;
@@ -27,9 +33,8 @@ function start() {
         updateMinText();
 
         if (isTimeOut()) {
-            timeOut();
+            timeOutFlag = true;
         }
-
     }, 1000);
 }
 
@@ -38,21 +43,12 @@ stopBtn.addEventListener("click", function () {
 });
 
 function timeOut() {
-    clearInterval(timer);
+    reset();
     window.alert("시간종료!");
 }
 
 function isTimeOut() {
     return second == 0 && minute == 0;
-}
-
-function isSecondMinus() {
-    return second < 0;
-}
-
-function decreaseMinuteInstead() {
-    minute -= 1;
-    second = 59;
 }
 
 function updateMinText() {
