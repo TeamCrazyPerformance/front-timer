@@ -26,9 +26,8 @@ function start() {
         updateSecText();
         updateMinText();
 
-        if (second == 0 && minute == 0) {
-            clearInterval(timer);
-            window.alert("시간종료!");
+        if (isTimeOut()) {
+            timeOut();
         }
 
     }, 1000);
@@ -37,6 +36,24 @@ function start() {
 stopBtn.addEventListener("click", function () {
     stop();
 });
+
+function timeOut() {
+    clearInterval(timer);
+    window.alert("시간종료!");
+}
+
+function isTimeOut() {
+    return second == 0 && minute == 0;
+}
+
+function isSecondMinus() {
+    return second < 0;
+}
+
+function decreaseMinuteInstead() {
+    minute -= 1;
+    second = 59;
+}
 
 function updateMinText() {
     if (minute < 1) {
