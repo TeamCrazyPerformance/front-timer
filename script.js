@@ -20,10 +20,6 @@ let timer;
 var timeOutFlag = false;
 var isTimeAdded = false;
 
-startBtn.addEventListener("click", function () {
-    start();
-});
-
 function start() {
     timer = setInterval(function () {
         if (!isTimeAdded) {
@@ -47,10 +43,6 @@ function start() {
         }
     }, 1000);
 }
-
-stopBtn.addEventListener("click", function () {
-    stop();
-});
 
 function secondPast() {
     second--;
@@ -89,6 +81,33 @@ function stop() {
     clearInterval(timer);
 }
 
+function addTime(addingMinute) {
+    isTimeAdded = true;
+
+    minute += addingMinute;
+    if (minute >= MINUTE_UPPER_BOUNDARY) {
+        minute -= MINUTE_UPPER_BOUNDARY;
+    }
+
+    updateMinText();
+}
+
+function reset() {
+    stop();
+    second = 0;
+    minute = 0;
+    secText.innerText = "00";
+    minText.innerText = "00";
+}
+
+startBtn.addEventListener("click", function () {
+    start();
+});
+
+stopBtn.addEventListener("click", function () {
+    stop();
+});
+
 minute1.addEventListener("click", function () {
     addTime(ONE);
 });
@@ -101,25 +120,6 @@ minute5.addEventListener("click", function () {
     addTime(FIVE);
 });
 
-function addTime(addingMinute) {
-    isTimeAdded = true;
-    
-    minute += addingMinute;
-    if (minute >= MINUTE_UPPER_BOUNDARY) {
-        minute -= MINUTE_UPPER_BOUNDARY;
-    }
-
-    updateMinText();
-}
-
 resetBtn.addEventListener("click", function () {
     reset();
 });
-
-function reset() {
-    stop();
-    second = 0;
-    minute = 0;
-    secText.innerText = "00";
-    minText.innerText = "00";
-}
