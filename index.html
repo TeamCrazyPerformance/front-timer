@@ -11,19 +11,26 @@
 </head>
 
 <body>
-    <div id="time">
-        <span id="min">00</span>:<span id="sec">00</span>
+  <div class="content">
+    <div class="time">
+        <span id="min" class="timeText">00</span>
+        <span class="timeText">:</span>
+        <span id="sec" class="timeText">00</span>
     </div>
-    <button id="start">시작</button>
-    <button id="stop">정지</button>
-    <button id="reset">초기화</button>
-    <div id="text">시간 추가</div>
-    <button id="minute1">1분</button>
-    <button id="minute3">3분</button>
-    <button id="minute5">5분</button>
-</body>
 
+    <div class="functionButtons">
+      <button id="start" class="functionButton">시작</button>
+      <button id="stop" class="functionButton">정지</button>
+      <button id="reset" class="functionButton">초기화</button>
+    </div>
 
+    <div class="addTimes">
+      <span id="addTimeText">시간 추가</span>
+      <button class="addTimeBtn" id="minute1">1분</button>
+      <button class="addTimeBtn" id="minute3">3분</button>
+      <button class="addTimeBtn" id="minute5">5분</button>
+    </div>
+  </div>
 </body>
 
 </html>
