@@ -7,17 +7,18 @@ window.onload = function() {
     let timer = 0;
 
     //click start button
-    document.getElementById("start").addEventListener("click", function() {
+    document.getElementById("startBtn").addEventListener("click", function() {
+        start();
+    });
+
+    function start() {
         //console.log(timer);
         if (timer > 0) {
             return;
         }
 
-
         var sec = parseInt(document.getElementById("sec").innerText);
         var min = parseInt(document.getElementById("min").innerText);
-
-
 
         //start seconds
         timer_sec = setInterval(function() {
@@ -50,10 +51,10 @@ window.onload = function() {
 
         timer++;
         //console.log(timer);
-    });
+    }
 
     //click stop button
-    document.getElementById("stop").addEventListener("click", function() {
+    document.getElementById("stopBtn").addEventListener("click", function() {
         stop();
     });
 
@@ -117,7 +118,7 @@ window.onload = function() {
     }
 
     //click reset button
-    document.getElementById("reset").addEventListener("click", function() {
+    document.getElementById("resetBtn").addEventListener("click", function() {
         reset();
     });
 

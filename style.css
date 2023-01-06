@@ -16,7 +16,7 @@
     line-height: 58px;
 }
 
-.functionButton{
+.functionBtn {
     color: white;
     position: absolute;
     width: 142px;
@@ -26,17 +26,17 @@
     border: none;
 }
 
-#start {
+#startBtn {
     background-color: #4FCC54;
     top: 303px;
 }
 
-#stop {
+#stopBtn {
     background-color: #FF7373;
     top: 357px;
 }
 
-#reset {
+#resetBtn {
     background-color: grey;
     left: 400px;
     top: 400px;
