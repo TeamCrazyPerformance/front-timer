@@ -23,11 +23,7 @@ function start() {
             return;
         }
 
-        second--;
-        if (second < 0) {
-            minute -= 1;
-            second = 59;
-        }
+        secondPast();
         
         updateSecText();
         updateMinText();
@@ -42,6 +38,14 @@ stopBtn.addEventListener("click", function () {
     stop();
 });
 
+function secondPast() {
+    second--;
+    if (second < 0) {
+        minute -= 1;
+        second = 59;
+    }
+}
+
 function timeOut() {
     reset();
     window.alert("시간종료!");
@@ -52,7 +56,7 @@ function isTimeOut() {
 }
 
 function updateMinText() {
-    if (minute < 1) {
+    if (minute < 10) {
         minText.innerText = "0" + minute;
     } else {
         minText.innerText = minute;
