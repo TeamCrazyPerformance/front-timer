@@ -69,46 +69,21 @@ window.onload = function() {
             timer = 0;
     }
 
-    //click minuteplus1 button
     document.getElementById("minute1").addEventListener("click", function() {
-        minuteplus1();
+        addTime(1);
     });
 
-    function minuteplus1() {
-        var min = parseInt(document.getElementById("min").innerText);
-        min++;
-        if (min == 60) {
-            min = 0;
-        } else if (min < 10) {
-            min = "0" + min;
-        }
-        document.getElementById("min").innerText = min;
-    }
-
-    //click minuteplus3 button
     document.getElementById("minute3").addEventListener("click", function() {
-        minuteplus3();
+        addTime(3);
     });
 
-    function minuteplus3() {
-        var min = parseInt(document.getElementById("min").innerText);
-        min = min + 3;
-        if (min == 60) {
-            min = 0;
-        } else if (min < 10) {
-            min = "0" + min;
-        }
-        document.getElementById("min").innerText = min;
-    }
-
-    //click minuteplus3 button
     document.getElementById("minute5").addEventListener("click", function() {
-        minuteplus5();
+        addTime(5);
     });
 
-    function minuteplus5() {
+    function addTime(minute) {
         var min = parseInt(document.getElementById("min").innerText);
-        min = min + 5;
+        min += minute;
         if (min == 60) {
             min = 0;
         } else if (min < 10) {
