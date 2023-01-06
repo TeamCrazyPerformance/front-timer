@@ -1,23 +1,29 @@
+const secText = document.getElementById("sec");
+const minText = document.getElementById("min");
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
+const minute1 = document.getElementById("minute1");
+const minute3 = document.getElementById("minute3");
+const minute5 = document.getElementById("minute5");
+const resetBtn = document.getElementById("resetBtn");
+
 let timer_sec;
 let timer_min;
-
 let timer = 0;
 
 //click start button
-document.getElementById("startBtn").addEventListener("click", function () {
+startBtn.addEventListener("click", function () {
     start();
 });
 
 function start() {
-    //console.log(timer);
     if (timer > 0) {
         return;
     }
 
-    var sec = parseInt(document.getElementById("sec").innerText);
-    var min = parseInt(document.getElementById("min").innerText);
+    var sec = parseInt(secText.innerText);
+    var min = parseInt(minText.innerText);
 
-    //start seconds
     timer_sec = setInterval(function () {
         sec--;
         if (sec < 0) {
@@ -28,12 +34,12 @@ function start() {
         } else if (sec < 10) {
             sec = "0" + sec;
         }
-        document.getElementById("sec").innerText = sec;
+        secText.innerText = sec;
         if (min < 1) {
 
-            document.getElementById("min").innerText = "0" + min;
+            minText.innerText = "0" + min;
         } else {
-            document.getElementById("min").innerText = min;
+            minText.innerText = min;
         }
 
         if (sec == 0 && min == 0) {
@@ -47,7 +53,7 @@ function start() {
     timer++;
 }
 
-document.getElementById("stopBtn").addEventListener("click", function () {
+stopBtn.addEventListener("click", function () {
     stop();
 });
 
@@ -62,35 +68,35 @@ function stop() {
         timer = 0;
 }
 
-document.getElementById("minute1").addEventListener("click", function () {
+minute1.addEventListener("click", function () {
     addTime(1);
 });
 
-document.getElementById("minute3").addEventListener("click", function () {
+minute3.addEventListener("click", function () {
     addTime(3);
 });
 
-document.getElementById("minute5").addEventListener("click", function () {
+minute5.addEventListener("click", function () {
     addTime(5);
 });
 
 function addTime(minute) {
-    var min = parseInt(document.getElementById("min").innerText);
+    var min = parseInt(minText.innerText);
     min += minute;
     if (min == 60) {
         min = 0;
     } else if (min < 10) {
         min = "0" + min;
     }
-    document.getElementById("min").innerText = min;
+    minText.innerText = min;
 }
 
-document.getElementById("resetBtn").addEventListener("click", function () {
+resetBtn.addEventListener("click", function () {
     reset();
 });
 
 function reset() {
     stop();
-    document.getElementById("sec").innerText = "00";
-    document.getElementById("min").innerText = "00";
+    secText.innerText = "00";
+    minText.innerText = "00";
 }
