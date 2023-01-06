@@ -1,0 +1,256 @@
+/* .box {
+    display: inline; 
+
+    padding-left: auto;
+    padding-right: auto; 
+    margin-left: auto;
+    margin-right: auto; 
+    /* position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* width: auto; 
+    height: auto;  */
+/* 
+    margin-left: auto; 
+    margin-right: auto;   */
+    /* padding-bottom: 100%; */
+    /* border: 1px solid;
+}    */
+
+.time { 
+    margin-top: 100px;
+    /* border: 1px solid; */
+    margin-bottom: 40px;
+    margin-left: auto; 
+    margin-right: auto; 
+
+    /* position: absolute; */
+    /* width: 145px; */
+    width: 145px;
+    height: 58px;
+    left: 115px;
+    top: 171px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #000000;
+    padding: 0 0 0 0; 
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+
+    margin-bottom: 5px;
+}
+
+#reset {  
+    margin-left: auto; 
+    margin-right: auto; 
+
+
+    margin-bottom: 5px; 
+    border: 0; 
+
+    width: 142px;
+    height: 45px;
+    left: 118px;
+    top: 357px;
+    background: gray;
+
+    /* 초기화 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#start {
+    margin-left: auto; 
+    margin-right: auto;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    /* Rectangle 2 */
+
+    /* position: absolute; */
+    width: 142px;
+    height: 45px;
+    left: 118px;
+    top: 303px;
+    background: #4FCC54;
+
+
+    /* 시작 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#end {
+    margin-left: auto; 
+    margin-right: auto;
+
+    margin-top: 5px;
+    border: 0;
+
+    /* position: absolute; */
+    width: 142px;
+    height: 45px;
+    left: 118px;
+    top: 357px;
+
+    background: #FF7373;
+
+    /* 정지 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+#literal {
+    margin-top: 30px;
+    margin-left: auto; 
+    margin-right: auto;
+    
+    /* position: absolute; */
+    width: 56px;
+    height: 17px;
+    left: 161px;
+    top: 424px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #000000;
+}
+
+.setting {
+    /* border: solid 1px;
+    margin-left: auto; 
+    margin-right: auto; */
+
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* display: inline; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+
+
+}
+
+.one {
+    
+    border: 0; 
+    /* Rectangle 1 */
+
+    /* position: absolute; */
+    width: 40px;
+    height: 40px;
+    left: 118px;
+    top: 452px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+    
+    background: #71C2FC;
+
+    /* 1분 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.three {
+    border: 0; 
+    /* Rectangle 4 */
+
+    /* position: absolute; */
+    width: 40px;
+    height: 40px;
+    left: 169px;
+    top: 452px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    background: #71C2FC;
+
+    /* 3분 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.five {
+    border: 0; 
+    /* Rectangle 5 */
+
+    /* position: absolute; */
+    width: 40px;
+    height: 40px;
+    left: 220px;
+    top: 452px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    background: #71C2FC;
+
+
+    /* 5분 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+
+    
+    color: #FFFFFF;
+}
