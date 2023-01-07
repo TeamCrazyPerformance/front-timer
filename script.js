@@ -2,22 +2,15 @@ window.onload = function() {
 
     let timer_sec;
     let timer_min;
-
-
     let timer = 0;
 
     //click start button
     document.getElementById("start").addEventListener("click", function() {
-        //console.log(timer);
         if (timer > 0) {
             return;
         }
-
-
         var sec = parseInt(document.getElementById("sec").innerText);
         var min = parseInt(document.getElementById("min").innerText);
-
-
 
         //start seconds
         timer_sec = setInterval(function() {
