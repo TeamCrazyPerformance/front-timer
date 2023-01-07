@@ -1,0 +1,121 @@
+#time {
+    position: absolute;
+    width: 145px;
+    height: 58px;
+    left: 115px;
+    top: 171px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    text-align: center;
+    color: #000000;
+}
+
+#start {
+    background-color: #4FCC54;
+    color: white;
+    position: absolute;
+    width: 142px;
+    height: 45px;
+    font-size: 16px;
+    left: 118px;
+    top: 303px;
+    border: none;
+}
+
+#stop {
+    background-color: #FF7373;
+    color: white;
+    position: absolute;
+    width: 142px;
+    height: 45px;
+    font-size: 16px;
+    left: 118px;
+    top: 357px;
+    border: none;
+}
+
+#reset {
+    background-color: grey;
+    color: white;
+    position: absolute;
+    width: 142px;
+    height: 45px;
+    font-size: 16px;
+    left: 400px;
+    top: 400px;
+    border: none;
+}
+
+#text {
+    position: absolute;
+    width: 100px;
+    height: 17px;
+    left: 161px;
+    top: 424px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    /*text-align: middle;*/
+    color: #000000;
+}
+
+#minute1 {
+    background-color: #71C2FC;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 118px;
+    top: 452px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+}
+
+#minute3 {
+    background-color: #71C2FC;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 169px;
+    top: 452px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+}
+
+#minute5 {
+    background-color: #71C2FC;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 220px;
+    top: 452px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+}
