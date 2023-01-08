@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <title>타이머</title>
-  </head>
+<html lang="en">
 
-  <body></body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="time">
+        <span id="min" class="timeText">00</span>
+        <span class="timeText">:</span>
+        <span id="sec" class="timeText">00</span>
+    </div>
+
+    <div class="functionBtns">
+      <button id="startBtn" class="functionBtn">시작</button>
+      <button id="stopBtn" class="functionBtn">정지</button>
+      <button id="resetBtn" class="functionBtn">초기화</button>
+    </div>
+
+    <div class="addTimes">
+      <span id="addTimeText">시간 추가</span>
+      <button class="addTimeBtn" id="minute1">1분</button>
+      <button class="addTimeBtn" id="minute3">3분</button>
+      <button class="addTimeBtn" id="minute5">5분</button>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+
 </html>
