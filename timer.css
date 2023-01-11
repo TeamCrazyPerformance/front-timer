@@ -1,38 +1,13 @@
-/* .box {
-    display: inline; 
+.clock-text {
+    /* 05:00 */
 
-    padding-left: auto;
-    padding-right: auto; 
-    margin-left: auto;
-    margin-right: auto; 
-    /* position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    /* width: auto; 
-    height: auto;  */
-/* 
-    margin-left: auto; 
-    margin-right: auto;   */
-    /* padding-bottom: 100%; */
-    /* border: 1px solid;
-}    */
-
-.time { 
-    margin-top: 100px;
-    /* border: 1px solid; */
-    margin-bottom: 40px;
-    margin-left: auto; 
-    margin-right: auto; 
-
-    /* position: absolute; */
-    /* width: 145px; */
+    position: absolute;
     width: 145px;
     height: 58px;
     left: 115px;
-    top: 171px;
+    top: 150px;
 
+    /* 여기서 초기화 버튼과 떨어지려면 어떻게 해야할까? */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -42,31 +17,25 @@
     text-align: center;
 
     color: #000000;
-    padding: 0 0 0 0; 
 }
 
 .button {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: start;
-
-    margin-bottom: 5px;
 }
 
 #reset {  
-    margin-left: auto; 
-    margin-right: auto; 
-
-
-    margin-bottom: 5px; 
+    border: 0;
+    position: absolute;
     border: 0; 
 
     width: 142px;
     height: 45px;
     left: 118px;
-    top: 357px;
+    top: 249px;
     background: gray;
+    
 
     /* 초기화 */
     font-family: 'Inter';
@@ -77,15 +46,11 @@
     text-align: center;
     color: #FFFFFF;
 
-}
+} 
 
-#start {
-    margin-left: auto; 
-    margin-right: auto;
-
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border: 0;
+ #start {
+    border: 0; 
+    position: absolute;
     /* Rectangle 2 */
 
     /* position: absolute; */
@@ -93,7 +58,7 @@
     height: 45px;
     left: 118px;
     top: 303px;
-    background: #4FCC54;
+    background: #4FCC54; 
 
 
     /* 시작 */
@@ -104,17 +69,12 @@
     line-height: 19px;
     text-align: center;
     color: #FFFFFF;
-
 }
 
 #end {
-    margin-left: auto; 
-    margin-right: auto;
+    border: 0; 
+    position: absolute;
 
-    margin-top: 5px;
-    border: 0;
-
-    /* position: absolute; */
     width: 142px;
     height: 45px;
     left: 118px;
@@ -134,15 +94,15 @@
 }
 
 #literal {
-    margin-top: 30px;
-    margin-left: auto; 
-    margin-right: auto;
-    
-    /* position: absolute; */
+    border: 0; 
+    position: absolute;
+
     width: 56px;
     height: 17px;
     left: 161px;
     top: 424px;
+
+    margin-bottom: 5px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -152,47 +112,33 @@
     /* identical to box height */
     text-align: center;
 
-    color: #000000;
-}
+    color: #000000; 
+} 
 
-.setting {
-    /* border: solid 1px;
-    margin-left: auto; 
-    margin-right: auto; */
-
-    margin-top: 5px;
-    margin-bottom: 10px;
-    /* display: inline; */
-    display: flex;
+.setting {   
+    display: flex; 
     flex-direction: row;
     justify-content: center;
     align-items: center; 
-
-
 }
 
 .one {
-    
     border: 0; 
-    /* Rectangle 1 */
-
-    /* position: absolute; */
+    position: absolute; 
     width: 40px;
     height: 40px;
     left: 118px;
     top: 452px;
-
-    margin-left: 5px;
-    margin-right: 5px;
     
-    background: #71C2FC;
+    background: #71C2FC; 
 
+    margin-top: 5px;
     /* 1분 */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 17px; 
     /* identical to box height */
     text-align: center;
 
@@ -201,56 +147,46 @@
 
 .three {
     border: 0; 
-    /* Rectangle 4 */
-
-    /* position: absolute; */
+    position: absolute; 
     width: 40px;
     height: 40px;
     left: 169px;
     top: 452px;
 
-    margin-left: 5px;
-    margin-right: 5px;
+    background: #71C2FC; 
 
-    background: #71C2FC;
-
+    margin-top: 5px;
     /* 3분 */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 17px; 
     /* identical to box height */
     text-align: center;
 
     color: #FFFFFF;
 }
-
 .five {
     border: 0; 
-    /* Rectangle 5 */
-
-    /* position: absolute; */
+    position: absolute;
     width: 40px;
     height: 40px;
     left: 220px;
     top: 452px;
 
-    margin-left: 5px;
-    margin-right: 5px;
-
     background: #71C2FC;
 
-
+    margin-top: 5px;
     /* 5분 */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 17px; 
     /* identical to box height */
     text-align: center;
 
-    
     color: #FFFFFF;
-}
+} 
+
