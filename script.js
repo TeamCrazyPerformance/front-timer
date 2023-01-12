@@ -91,8 +91,8 @@ function reset() {
     stop();
     second = 0;
     minute = 0;
-    secText.innerText = "00";
-    minText.innerText = "00";
+    updateSecText();
+    updateMinText();
 }
 
 startBtn.addEventListener("click", function () {
