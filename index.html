@@ -1,125 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <title>타이머</title>
-    <script language="JavaScript">
-      const Timer=document.getElementById('Timer');
-      var time=3000; //0.1초 단위로 시간 설정
-      var min = "";
-      var sec = "";
-      var flag= false; //시작/정지 버튼으로 인해 바뀌는 flag
-      var x = setInterval(function(){
-        min = parseInt(time/600);
-        sec = parseInt((time/10)%60);
-        if(flag){ //flag=true: 시작이 눌러진 상태이면
-          time--; //time 0.1초 감소
-        }
-        if(min<10){ //분(min)이 한 자리 수이면 앞에 0 추가
-          min="0"+min; 
-        }
-        if(sec<10){//초(sec)가 한 자리 수이면 앞에 0 추가
-          sec="0"+sec; 
-        }
-        document.getElementById("Timer").innerHTML = min + ":" + sec;
-        if(time<0){ //시간이 다 되면 time을 초기 값인 5분으로 초기화하고 타이머를 정지상태로 만들고
-            time=3000;
-            flag=false;
-            alert('종료') // 사용자에게 종료메시지 전송
-          }
-      },100);
-    </script>
 
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <title>타이머</title>
+  <script type="text/javascript" src="timer_fcn.js"></script>
+  <link href="timer_style.css" rel="stylesheet" type="text/css" />
+</head>
 
-    .button1{
-      background-color:#4FCC54;
-      color: #FFFFFF;
-      border: none;
-      font-size: 16px;
-      position: absolute;
-      width: 142px;
-      height: 45px;
-      left: 118px;
-      top: 303px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .button2{
-      background-color:#FF7373;
-      color: #FFFFFF;
-      border: none;
-      font-size: 16px;
-      position: absolute;
-      width: 142px;
-      height: 45px;
-      left: 118px;
-      top: 357px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .min1Button{
-      position: absolute;
-      background-color:#71C2FC ;
-      color:#FFFFFF;
-      height: 40px;
-      width: 40px;
-      top: 452px;
-      left: 118px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .min3Button{
-      position: absolute;
-      background-color:#71C2FC ;
-      color:#FFFFFF;
-      height: 40px;
-      width: 40px;
-      top: 452px;
-      left: 169px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .min5Button{
-      position: absolute;
-      background-color:#71C2FC ;
-      color:#FFFFFF;
-      height: 40px;
-      width: 40px;
-      top: 452px;
-      left: 220px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-      
-    </style>
-  </head>
-
-  <body>
-    <div id="Timer" style="position:absolute; height: 58px; width: 145px; left: 115px; top: 171px; font-size: 48px; font-weight: bold; text-align: center;"></div>
-    <input type="button" class="button1" value="시작" onclick="flag=true">
-    <input type="button" class="button2" value="정지" onclick="flag=false">
-    <div style=
-    "width: 80px;
-    height: 17px;
-    left: 150px;
-    top: 424px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    color: #000000;
-    font-weight: bold;
-    position:absolute">
-    시간 추가
+<body>
+  <div class="container">
+    <div id="Timer"></div>
+    <input type="button" class="button button1" value="시작" onclick="flag=true">
+    <input type="button" class="button button2" value="정지" onclick="flag=false">
+    <div style="width: 80px;
+      height: 17px;
+      left: 150px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      color: #000000;
+      font-weight: bold;">
+      시간 추가
     </div>
-    <input type="button" class="min1Button" value="1분" onclick="time+=600">
-    <input type="button" class="min3Button" value="3분" onclick="time+=1800">
-    <input type="button" class="min5Button" value="5분" onclick="time+=3000">
-  </body>
+    <div class="buttonList">
+      <input type="button" class="button min1Button" value="1분" onclick="time+=600">
+      <input type="button" class="button min3Button" value="3분" onclick="time+=1800">
+      <input type="button" class="button min5Button" value="5분" onclick="time+=3000">
+    </div>
+  </div>
+</body>
+
 </html>
