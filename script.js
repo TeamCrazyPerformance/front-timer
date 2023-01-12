@@ -1,6 +1,8 @@
 const SECOND_LOWER_BOUNDARY = 0;
 const MINUTE_LOWER_BOUNDARY = 0;
 const MINUTE_UPPER_BOUNDARY = 60;
+const MINUTE = 0;
+const SECOND = 0;
 
 const secText = document.getElementById("sec");
 const minText = document.getElementById("min");
@@ -14,6 +16,30 @@ var second = 0;
 let timer;
 var timeOutFlag = false;
 var isTimeAdded = false;
+
+function updateMinSecText(minOrSecCheck) {
+    let minOrSec;
+    let minOrSecText;
+    switch(minOrSecCheck) {
+        case MINUTE:
+            minOrSec = minute;
+            minOrSecText = minText;
+            break;
+
+        case SECOND:
+            minOrSec = second;
+            minOrSecText = secText;
+            break;
+
+        // no default
+    }
+
+    if (minOrSec < 10) {
+        minOrSecText.innerText = "0" + minOrSec;
+    } else {
+        minOrSecText.innerText = minOrSec;
+    }
+}
 
 function updateMinText() {
     if (minute < 10) {
