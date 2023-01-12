@@ -15,6 +15,50 @@ let timer;
 var timeOutFlag = false;
 var isTimeAdded = false;
 
+function updateMinText() {
+    if (minute < 10) {
+        minText.innerText = "0" + minute;
+    } else {
+        minText.innerText = minute;
+    }
+}
+
+function updateSecText() {
+    if (second < 10) {
+        secText.innerText = "0" + second;
+    } else {
+        secText.innerText = second;
+    }
+}
+
+function secondPast() {
+    second--;
+    if (second < SECOND_LOWER_BOUNDARY) {
+        minute -= 1;
+        second = 59;
+    }
+}
+
+function timeOut() {
+    reset();
+    window.alert("시간종료!");
+}
+
+function isTimeOut() {
+    return second == SECOND_LOWER_BOUNDARY && minute == MINUTE_LOWER_BOUNDARY;
+}
+
+function addTime(addingMinute) {
+    isTimeAdded = true;
+
+    minute += addingMinute;
+    if (minute >= MINUTE_UPPER_BOUNDARY) {
+        minute -= MINUTE_UPPER_BOUNDARY;
+    }
+
+    updateMinText();
+}
+
 function start() {
     timer = setInterval(function () {
         if (!isTimeAdded) {
@@ -39,52 +83,8 @@ function start() {
     }, 1000);
 }
 
-function secondPast() {
-    second--;
-    if (second < SECOND_LOWER_BOUNDARY) {
-        minute -= 1;
-        second = 59;
-    }
-}
-
-function timeOut() {
-    reset();
-    window.alert("시간종료!");
-}
-
-function isTimeOut() {
-    return second == SECOND_LOWER_BOUNDARY && minute == MINUTE_LOWER_BOUNDARY;
-}
-
-function updateMinText() {
-    if (minute < 10) {
-        minText.innerText = "0" + minute;
-    } else {
-        minText.innerText = minute;
-    }
-}
-
-function updateSecText() {
-    if (second < 10) {
-        secText.innerText = "0" + second;
-    } else {
-        secText.innerText = second;
-    }
-}
-
 function stop() {
     clearInterval(timer);
-}
-
-function addTime(addingMinute) {
-    isTimeAdded = true;
-
-    minute += addingMinute;
-    if (minute >= MINUTE_UPPER_BOUNDARY) {
-        minute -= MINUTE_UPPER_BOUNDARY;
-    }
-
-    updateMinText();
 }
 
 function reset() {
@@ -93,13 +93,6 @@ function reset() {
     minute = 0;
     secText.innerText = "00";
     minText.innerText = "00";
-}
-
-function getTargetTime(item) {
-    const targetId = item.id;
-    const trimmedTargetId = targetId.substring(6);
-    const targetTime = parseInt(trimmedTargetId);
-    return targetTime;
 }
 
 startBtn.addEventListener("click", function () {
@@ -113,6 +106,13 @@ stopBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function () {
     reset();
 });
+
+function getTargetTime(item) {
+    const targetId = item.id;
+    const trimmedTargetId = targetId.substring(6);
+    const targetTime = parseInt(trimmedTargetId);
+    return targetTime;
+}
 
 for (let item of minuteButtons) {
     item.addEventListener("click", function() {
