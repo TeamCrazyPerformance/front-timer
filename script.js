@@ -2,7 +2,7 @@ const SECOND_LOWER_BOUNDARY = 0;
 const MINUTE_LOWER_BOUNDARY = 0;
 const MINUTE_UPPER_BOUNDARY = 60;
 const MINUTE = 0;
-const SECOND = 0;
+const SECOND = 1;
 
 const secText = document.getElementById("sec");
 const minText = document.getElementById("min");
@@ -41,22 +41,6 @@ function updateMinSecText(minOrSecCheck) {
     }
 }
 
-function updateMinText() {
-    if (minute < 10) {
-        minText.innerText = "0" + minute;
-    } else {
-        minText.innerText = minute;
-    }
-}
-
-function updateSecText() {
-    if (second < 10) {
-        secText.innerText = "0" + second;
-    } else {
-        secText.innerText = second;
-    }
-}
-
 function secondPast() {
     second--;
     if (second < SECOND_LOWER_BOUNDARY) {
@@ -82,7 +66,7 @@ function addTime(addingMinute) {
         minute -= MINUTE_UPPER_BOUNDARY;
     }
 
-    updateMinText();
+    updateMinSecText(MINUTE);
 }
 
 function start() {
@@ -100,8 +84,8 @@ function start() {
 
         secondPast();
         
-        updateSecText();
-        updateMinText();
+        updateMinSecText(MINUTE);
+        updateMinSecText(SECOND);
 
         if (isTimeOut()) {
             timeOutFlag = true;
@@ -117,8 +101,8 @@ function reset() {
     stop();
     second = 0;
     minute = 0;
-    updateSecText();
-    updateMinText();
+    updateMinSecText(MINUTE);
+    updateMinSecText(SECOND);
 }
 
 startBtn.addEventListener("click", function () {
