@@ -55,7 +55,7 @@ function timeOut() {
 }
 
 function isTimeOut() {
-    return second == SECOND_LOWER_BOUNDARY && minute == MINUTE_LOWER_BOUNDARY;
+    return second === SECOND_LOWER_BOUNDARY && minute === MINUTE_LOWER_BOUNDARY;
 }
 
 function addTime(addingMinute) {
