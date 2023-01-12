@@ -1,5 +1,9 @@
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 .time {
-    position: absolute;
     width: 145px;
     height: 58px;
     left: 115px;
@@ -16,9 +20,13 @@
     line-height: 58px;
 }
 
+.functionBtns {
+    display: flex;
+    flex-direction: column;
+}
+
 .functionBtn {
     color: white;
-    position: absolute;
     width: 142px;
     height: 45px;
     left: 118px;
@@ -43,7 +51,6 @@
 }
 
 #addTimeText {
-    position: absolute;
     width: 100px;
     height: 17px;
     left: 161px;
@@ -58,7 +65,6 @@
 
 .addTimeBtn{
     background-color: #71C2FC;
-    position: absolute;
     width: 40px;
     height: 40px;
     top: 452px;
