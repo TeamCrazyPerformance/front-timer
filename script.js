@@ -1,6 +1,3 @@
-const ONE = 1;
-const THREE = 3;
-const FIVE = 5;
 const SECOND_LOWER_BOUNDARY = 0;
 const MINUTE_LOWER_BOUNDARY = 0;
 const MINUTE_UPPER_BOUNDARY = 60;
@@ -9,10 +6,8 @@ const secText = document.getElementById("sec");
 const minText = document.getElementById("min");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
-const minute1 = document.getElementById("minute1");
-const minute3 = document.getElementById("minute3");
-const minute5 = document.getElementById("minute5");
 const resetBtn = document.getElementById("resetBtn");
+const minuteButtons = document.getElementsByClassName('addTimeBtn');
 
 var minute = 0;
 var second = 0;
@@ -100,6 +95,13 @@ function reset() {
     minText.innerText = "00";
 }
 
+function getTargetTime(item) {
+    const targetId = item.id;
+    const trimmedTargetId = targetId.substring(6);
+    const targetTime = parseInt(trimmedTargetId);
+    return targetTime;
+}
+
 startBtn.addEventListener("click", function () {
     start();
 });
@@ -108,18 +110,12 @@ stopBtn.addEventListener("click", function () {
     stop();
 });
 
-minute1.addEventListener("click", function () {
-    addTime(ONE);
-});
-
-minute3.addEventListener("click", function () {
-    addTime(THREE);
-});
-
-minute5.addEventListener("click", function () {
-    addTime(FIVE);
-});
-
 resetBtn.addEventListener("click", function () {
     reset();
 });
+
+for (let item of minuteButtons) {
+    item.addEventListener("click", function() {
+        addTime(getTargetTime(item));
+    });
+}
