@@ -11,11 +11,11 @@ const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
 const minuteButtons = document.getElementsByClassName('addTimeBtn');
 
-var minute = 0;
-var second = 0;
+let minute = 0;
+let second = 0;
 let timer;
-var timeOutFlag = false;
-var isTimeAdded = false;
+let timeOutFlag = false;
+let isTimeAdded = false;
 
 function updateMinSecText(minOrSecCheck) {
     let minOrSec;
