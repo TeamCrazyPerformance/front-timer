@@ -9,15 +9,15 @@ let timerEventId;
 
 startBtn.addEventListener("click", startEvent);
 stopBtn.addEventListener("click", stopEvent);
-document.getElementById("1min").addEventListener("click", function () {
+document.getElementById("1min").addEventListener("click", () => {
     addTime(ONE_MINUTE);
 });
 
-document.getElementById("3min").addEventListener("click", function () {
+document.getElementById("3min").addEventListener("click", () => {
     addTime(THREE_MINUTE);
 });
 
-document.getElementById("5min").addEventListener("click", function () {
+document.getElementById("5min").addEventListener("click", () => {
     addTime(FIVE_MINUTE);
 });
 
@@ -27,7 +27,7 @@ function startEvent() {
     }
     playing = true;
 
-    timerEventId = setInterval(function () {
+    timerEventId = setInterval(() => {
         if (time <= 0) {
             playing = false;
             finishTimer();
@@ -42,7 +42,7 @@ function finishTimer() {
     const END_MESSAGE = "종료";
 
     clearInterval(timerEventId);
-    setTimeout(function () {
+    setTimeout(() => {
         alert(END_MESSAGE)
     });
 }
