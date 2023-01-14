@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    width: 300px;
+    height: 280px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #Timer {
+    height: 58px;
+    width: 145px;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .button1 {
+    background-color: #4FCC54;
+    border: none;
+    width: 142px;
+    height: 45px;
+
+  }
+
+  .button2 {
+    background-color: #FF7373;
+    border: none;
+    width: 142px;
+    height: 45px;
+
+  }
+
+  .buttonList {
+    display: flex;
+    width: 142px;
+    height: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .min1Button {
+    background-color: #71C2FC;
+    height: 40px;
+    width: 40px;
+
+    border: none;
+  }
+
+  .min3Button {
+    background-color: #71C2FC;
+    height: 40px;
+    width: 40px;
+
+    border: none;
+
+  }
+
+  .min5Button {
+    background-color: #71C2FC;
+    height: 40px;
+    width: 40px;
+
+    border: none;
+  }
