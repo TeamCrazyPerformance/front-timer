@@ -1,20 +1,34 @@
+//const 예시 = document.getElementById("sec")
+
+
+
 window.onload = function() {
+    const dosec = document.getElementById("sec");
+    const domin = document.getElementById("min");
 
     let timer_sec;
-    let timer_min;
     let timer = 0;
 
     //click start button
     document.getElementById("start").addEventListener("click", function() {
+
         if (timer > 0) {
             return;
         }
-        var sec = parseInt(document.getElementById("sec").innerText);
-        var min = parseInt(document.getElementById("min").innerText);
+        var sec = parseInt(dosec.innerText);
+        var min = parseInt(domin.innerText);
 
         //start seconds
+
         timer_sec = setInterval(function() {
-            sec--;
+            if (sec == 0 && min == 0) {
+                clearInterval(timer_sec);
+
+                setTimeout(function() {
+                    alert('시간을 설정해 주세요!');
+                }, 1000);
+            }
+
             if (sec < 0) {
                 min -= 1;
                 sec = 59;
@@ -23,104 +37,70 @@ window.onload = function() {
             } else if (sec < 10) {
                 sec = "0" + sec;
             }
-            document.getElementById("sec").innerText = sec;
+            dosec.innerText = sec;
+
             if (min < 10) {
-
-                document.getElementById("min").innerText = "0" + min;
+                domin.innerText = "0" + min;
             } else {
-                document.getElementById("min").innerText = min;
+                domin.innerText = min;
             }
 
-            if (sec == 0 && min == 0) {
-                clearInterval(timer_sec);
-                clearInterval(timer_min);
-                setTimeout(function() {
-                    window.alert("시간종료!");
-                }, 1000);
-
-
-            }
-
+            sec--;
         }, 1000);
 
 
         timer++;
 
-    });
+        //click stop button
+        document.getElementById("stop").addEventListener("click", function() {
+            stop();
+        });
 
-    //click stop button
-    document.getElementById("stop").addEventListener("click", function() {
-        stop();
+
     });
 
     function stop() {
-
         clearInterval(timer_sec);
-        clearInterval(timer_min);
-
-
         timer--;
         if (timer < 0)
             timer = 0;
     }
 
-    //click minuteplus1 button
+    //click minuteplus button
     document.getElementById("minute1").addEventListener("click", function() {
-        minuteplus1();
+        minuteplus(1);
     });
-
-    function minuteplus1() {
-        var min = parseInt(document.getElementById("min").innerText);
-        min++;
-        if (min == 60) {
-            min = 0;
-        } else if (min < 10) {
-            min = "0" + min;
-        }
-        document.getElementById("min").innerText = min;
-    }
 
     //click minuteplus3 button
     document.getElementById("minute3").addEventListener("click", function() {
-        minuteplus3();
+        minuteplus(3);
     });
-
-    function minuteplus3() {
-        var min = parseInt(document.getElementById("min").innerText);
-        min = min + 3;
-        if (min == 60) {
-            min = 0;
-        } else if (min < 10) {
-            min = "0" + min;
-        }
-        document.getElementById("min").innerText = min;
-    }
 
     //click minuteplus3 button
     document.getElementById("minute5").addEventListener("click", function() {
-        minuteplus5();
+        minuteplus(5);
     });
 
-    function minuteplus5() {
-        var min = parseInt(document.getElementById("min").innerText);
-        min = min + 5;
-        if (min == 60) {
-            min = 0;
-        } else if (min < 10) {
+    function minuteplus(minute) {
+        var min = parseInt(domin.innerText);
+
+        min = min + minute;
+        if (min < 10) {
             min = "0" + min;
+
         }
-        document.getElementById("min").innerText = min;
+        domin.innerText = min;
+
+        //click reset button
+        document.getElementById("reset").addEventListener("click", function() {
+            reset();
+        });
+
+        function reset() {
+            stop();
+            dosec.innerText = "00";
+            domin.innerText = "00";
+        }
+
     }
-
-    //click reset button
-    document.getElementById("reset").addEventListener("click", function() {
-        reset();
-    });
-
-    function reset() {
-        stop();
-        document.getElementById("sec").innerText = "00";
-        document.getElementById("min").innerText = "00";
-    }
-
-};
+}
