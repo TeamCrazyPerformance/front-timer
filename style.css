@@ -1,9 +1,17 @@
-.time {
+body{
+    margin: 0;
+}
+
+.content {
     position: absolute;
     width: 145px;
-    height: 58px;
-    left: 115px;
     top: 171px;
+    left: 118px;
+}
+
+.time {
+    width: 145px;
+    height: 58px;
     text-align: center;
     color: #000000;
 }
@@ -16,38 +24,44 @@
     line-height: 58px;
 }
 
+.functionBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 153px;
+    position: relative;
+    top: 74px;
+}
+
 .functionBtn {
     color: white;
-    position: absolute;
     width: 142px;
     height: 45px;
-    left: 118px;
     font-size: 16px;
     border: none;
 }
 
 #startBtn {
     background-color: #4FCC54;
-    top: 303px;
 }
 
 #stopBtn {
     background-color: #FF7373;
-    top: 357px;
 }
 
 #resetBtn {
     background-color: grey;
-    left: 400px;
-    top: 400px;
+}
+
+.addTimes{
+    text-align: center;
+    position: relative;
+    top: 89px;
 }
 
 #addTimeText {
-    position: absolute;
     width: 100px;
-    height: 17px;
-    left: 161px;
-    top: 424px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -56,30 +70,22 @@
     color: #000000;
 }
 
+.addTimeBtns{
+    display: flex;
+    position: relative;
+    top: 11px;
+    justify-content: space-between;
+}
+
 .addTimeBtn{
     background-color: #71C2FC;
-    position: absolute;
     width: 40px;
     height: 40px;
-    top: 452px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
     color: #FFFFFF;
     border: none;
-}
-
-#minute1 {
-    left: 118px;
-}
-
-#minute3 {
-    left: 169px;
-}
-
-#minute5 {
-    left: 220px;
 }
